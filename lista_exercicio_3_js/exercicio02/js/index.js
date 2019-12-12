@@ -1,4 +1,3 @@
-const numeros = [];
 let maior = -Infinity;
 let qtd = 0;
 
