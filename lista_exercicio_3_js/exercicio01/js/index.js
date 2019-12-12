@@ -1,12 +1,10 @@
-let loop = true;
 const notas = [];
 let qtd = 0;
 
-while(loop) {
+while(true) {
     let entrada = prompt('Digite uma nota ou fim para encerrar');
 
     if (entrada == 'fim') {
-        loop  = false;
         break;
     }
 

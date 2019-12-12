@@ -1,7 +1,6 @@
-let loop = true;
 let fraseIvertida = ''; 
 
-while(loop) {
+while(true) {
     let entrada = prompt('Digite uma palavra');
 
     if (entrada == 'fim') {
