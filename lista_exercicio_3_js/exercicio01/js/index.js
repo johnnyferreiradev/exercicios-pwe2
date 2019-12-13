@@ -1,5 +1,5 @@
-const notas = [];
 let qtd = 0;
+let somaNotas = 0;
 
 while(true) {
     let entrada = prompt('Digite uma nota ou fim para encerrar');
@@ -8,16 +8,11 @@ while(true) {
         break;
     }
 
-    let nota = parseFloat(entrada);
-    notas.push(nota)
+    somaNotas += parseFloat(entrada);
     qtd++;
 }
 
-const soma = notas.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue
-});
-
-const media = soma / qtd;
+const media = somaNotas / qtd;
 
 alert('Média  = ' + media);
 
