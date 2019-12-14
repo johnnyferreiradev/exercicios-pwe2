@@ -5,7 +5,7 @@ function getFirstName(fullname) {
 
 function checkMinSize(size, string) {
     const name = getFirstName(string);
-    return name.length >= size ? true : false; 
+    return name.length >= size ? true : false;
 }
 
 function checkFistLetter(string) {
@@ -13,22 +13,22 @@ function checkFistLetter(string) {
     let index;
     let isValid = true;
 
-    words.forEach((word) => {
-        if (word != "de" || word != "do" || word != "da") {
-            index = word[0].search(/[A-Z]/);
+    for (let i = 0; i < words.length; i++) {
+        if (!(words[i] == "de" || words[i] == "do" || words[i] == "da")) {
+            index = words[i][0].search(/[A-Z]/);
 
-            if(index == -1) {
+            if (index == -1) {
                 isValid = false;
             }
         }
-    });
+    }
 
     return isValid;
 }
 
 function checkLastNameExists(string) {
     const words = string.split(" ");
-    if(words[0] && words.length >= 2 && words[1] != "") {
+    if (words[0] && words.length >= 2 && words[1] != "") {
         return true;
     }
 
@@ -37,20 +37,20 @@ function checkLastNameExists(string) {
 
 function checkIfNotContainsNumber(string) {
     var index = string.search(/[0-9]/);
-    
+
     return index == -1 ? true : false;
 }
 
 
 const name = prompt("Digite seu nome completo");
 
-const isValid = 
+const isValid =
     checkMinSize(4, name) &&
     checkFistLetter(name) &&
     checkLastNameExists(name) &&
     checkIfNotContainsNumber(name);
 
-if(isValid) {
+if (isValid) {
     alert('Nome válido!');
 } else {
     alert('Nome inválido!');
